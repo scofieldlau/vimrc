@@ -4,7 +4,7 @@
 
 syntax on
 set number
-set norelativenumber
+set relativenumber
 set cursorline
 set wrap
 set showcmd
@@ -33,7 +33,6 @@ set backspace=indent,eol,start
 set foldmethod=indent
 set foldlevel=99
 
-set laststatus=2
 set autochdir
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -42,14 +41,18 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'connorholyday/vim-snazzy'
 
 call plug#end()
 
 let g:SnazzyTransparent = 1
 color snazzy
+
+
+
+let laststatus = 2
 
